@@ -13,8 +13,8 @@ SHADERS := \
 	shaders/shader_exercise1
 
 %: %.cpp
-	$(CXX) -o $@  $< wrappers/*.cpp glad.c stb_image.cpp $(FLAGS) $(INCLUDE_PATHS) $(LIB_PATHS)
-	(cd $(dir $@); ./$(notdir $@))
+	$(CXX) -o $@.exe  $< wrappers/*.cpp glad.c stb_image.cpp $(FLAGS) $(INCLUDE_PATHS) $(LIB_PATHS)
+	(cd $(dir $@); ./$(notdir $@).exe)
 
 clean:
 	find . -maxdepth 2 -type f -executable -exec rm {} +
